@@ -1,4 +1,4 @@
-<Project Sdk="MSTest.Sdk/3.6.4">
+﻿<Project Sdk="MSTest.Sdk/3.6.4">
 
   <PropertyGroup>
     <TargetFramework>net8.0-windows</TargetFramework>
@@ -11,6 +11,10 @@
   <ItemGroup>
     <ProjectReference Include="..\LiuLiuTools.WpfControl\LiuLiuTools.WpfControl.csproj" />
     <ProjectReference Include="..\LiuLiuTools\LiuLiuTools.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="LiuLiuTools\" />
   </ItemGroup>
 
 </Project>
