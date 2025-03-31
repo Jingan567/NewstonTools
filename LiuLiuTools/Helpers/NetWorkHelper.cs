@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Management;
+using System.Net.NetworkInformation;
+using System.Net.Sockets;
 
 namespace LiuLiuTools.Helpers
 {
@@ -95,6 +97,42 @@ namespace LiuLiuTools.Helpers
             {
                 Console.WriteLine($"查询失败: {ex.Message}");
                 return new string[] { "unknown" };
+            }
+        }
+
+
+        /// <summary>
+        /// 获取本机IP,最朴素的方式
+        /// </summary>
+        private void GetAllNetInterface(string friendlyName)
+        {
+            string adapter_IP = "";
+            //获取所有网卡信息
+            NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
+            foreach (NetworkInterface adapter in nics)
+            {
+                string adapter_Name = adapter.Name.ToString();
+                if (adapter.NetworkInterfaceType == NetworkInterfaceType.Ethernet)
+                {
+                    //获取以太网卡网络接口信息
+                    IPInterfaceProperties ip4 = adapter.GetIPProperties();
+                    //获取单播地址集
+                    UnicastIPAddressInformationCollection ipCollection = ip4.UnicastAddresses;
+                    foreach (UnicastIPAddressInformation ipadd in ipCollection)//从接口集合中获取ip
+                    {
+                        //InterNetwork    IPV4地址      InterNetworkV6        IPV6地址
+                        //Max            MAX 位址
+
+                        //判断是否为MES/ipv4
+                        if (adapter_Name.ToUpper().Contains(friendlyName) &&
+                            ipadd.Address.AddressFamily == AddressFamily.InterNetwork)
+                        {
+                            adapter_IP = ipadd.Address.ToString();//获取ip
+                            string tempLogStr = adapter_Name + " IP= " + adapter_IP;
+                            //Log.AddLog(tempLogStr);
+                        }
+                    }
+                }
             }
         }
 
