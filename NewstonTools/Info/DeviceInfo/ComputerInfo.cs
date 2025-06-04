@@ -4,7 +4,7 @@ using System.Management;
 using System.Threading;
 
 
-namespace LiuLiuTools.Info.DeviceInfo
+namespace NewstonTools.Info.DeviceInfo
 {
     public class ComputerInfo
     {
@@ -13,7 +13,7 @@ namespace LiuLiuTools.Info.DeviceInfo
         public static ComputerInfo Instance => _computerInfo.Value;
 
         //私有构造函数（防止外部实例化）
-        private ComputerInfo() 
+        private ComputerInfo()
         {
             CpuID = GetCpuID();
             DiskID = GetDiskID();
@@ -64,7 +64,7 @@ namespace LiuLiuTools.Info.DeviceInfo
             try
             {
                 //获取硬盘ID 
-                String HDid = "";
+                string HDid = "";
                 ManagementClass mc = new ManagementClass("Win32_DiskDrive");
                 ManagementObjectCollection moc = mc.GetInstances();
                 foreach (ManagementObject mo in moc)
@@ -186,7 +186,7 @@ namespace LiuLiuTools.Info.DeviceInfo
         {
             try
             {
-                return System.Environment.GetEnvironmentVariable("ComputerName");
+                return Environment.GetEnvironmentVariable("ComputerName");
             }
             catch
             {

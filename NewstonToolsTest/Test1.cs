@@ -1,4 +1,4 @@
-﻿namespace LiuLiuToolsTest
+﻿namespace NewstonToolsTest
 {
     [TestClass]
     public sealed class Test1

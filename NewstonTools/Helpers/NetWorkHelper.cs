@@ -4,7 +4,7 @@ using System.Management;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
 
-namespace LiuLiuTools.Helpers
+namespace NewstonTools.Helpers
 {
     /// <summary>
     ///Computer 的摘要说明
@@ -232,8 +232,8 @@ namespace LiuLiuTools.Helpers
                         //    string str = item.Name;
                         //}
                         //st=mo["IpAddress"].ToString(); 
-                        System.Array ar;
-                        ar = (System.Array)(mo.Properties["IpAddress"].Value);
+                        Array ar;
+                        ar = (Array)mo.Properties["IpAddress"].Value;
                         st = ar.GetValue(0).ToString();
                         break;
                     }

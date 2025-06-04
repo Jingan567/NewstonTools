@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace LiuLiuTools.FileHelpers.Interfaces
+namespace NewstonTools.Info
 {
-    internal interface IWriteFile
+    internal class DeviceInfo
     {
     }
 }

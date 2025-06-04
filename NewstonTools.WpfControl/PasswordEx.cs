@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace LiuLiuTools.WpfControl
+namespace NewstonTools.WpfControl
 {
     public class PasswordBoxEx
     {
@@ -29,7 +29,7 @@ namespace LiuLiuTools.WpfControl
                 if (pb != null)
                 {
                     pb.Password = e.NewValue as string;
-                    if(pb.Password != null)
+                    if (pb.Password != null)
                         SetSelection(pb, pb.Password.Length, 0);
                 }
             }));
@@ -48,7 +48,7 @@ namespace LiuLiuTools.WpfControl
         }
 
         #region 附加属性是否绑定
-        
+
         public static bool GetIsBind(DependencyObject obj)
         {
             return (bool)obj.GetValue(IsBindProperty);
@@ -66,7 +66,7 @@ namespace LiuLiuTools.WpfControl
                 PasswordBox? pb = d as PasswordBox;
                 if (pb != null)
                 {
-                    if((bool)e.NewValue)
+                    if ((bool)e.NewValue)
                     {
                         pb.PasswordChanged += Pb_PasswordChanged;
                     }

@@ -1,4 +1,4 @@
-namespace LiuLiuToolsTest;
+namespace NewstonToolsTest.LiuLiuTools.WpfControl;
 
 [TestClass]
 public class TestPasswordBoxEx
