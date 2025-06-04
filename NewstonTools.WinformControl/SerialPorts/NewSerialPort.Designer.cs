@@ -32,8 +32,7 @@
             // 
             // NewSerialPort
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Name = "NewSerialPort";
             this.Size = new System.Drawing.Size(627, 439);
             this.ResumeLayout(false);
