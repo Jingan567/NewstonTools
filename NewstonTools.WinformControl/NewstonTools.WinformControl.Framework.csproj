@@ -51,19 +51,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SerialPorts\SerialPortClient.cs" />
-    <Compile Include="UserControl1.cs">
+    <Compile Include="SerialPorts\NewSerialPort.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <Compile Include="SerialPorts\NewSerialPort.Designer.cs">
+      <DependentUpon>NewSerialPort.cs</DependentUpon>
     </Compile>
+    <Compile Include="SerialPorts\SerialPortClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <EmbeddedResource Include="SerialPorts\NewSerialPort.resx">
+      <DependentUpon>NewSerialPort.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -6,10 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewstonTools.WinformControl.SerialPorts
+namespace NewstonTools.WinformControl.Framework.SerialPorts
 {
 
-    public class SerialPortClient
+    class SerialPortClient
     {
         #region 静态方法
         /// <summary>

@@ -11,11 +11,11 @@
   <ItemGroup>
     <ProjectReference Include="..\LiuLiuTools.WpfControl\NewstonTools.WpfControl.csproj" />
     <ProjectReference Include="..\LiuLiuTools\NewstonTools.csproj" />
+    <ProjectReference Include="..\NewstonTools.WinformControl\NewstonTools.WinformControl.Framework.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="NewstonTools\" />
-    <Folder Include="NewstonTools.WinformControl\" />
   </ItemGroup>
 
 </Project>
