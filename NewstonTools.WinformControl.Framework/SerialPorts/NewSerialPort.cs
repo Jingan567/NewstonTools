@@ -17,5 +17,7 @@ namespace NewstonTools.WinformControl.Framework.SerialPorts
         {
             InitializeComponent();
         }
+        [Browsable(true)]
+        public string hello { get; set; }
     }
 }

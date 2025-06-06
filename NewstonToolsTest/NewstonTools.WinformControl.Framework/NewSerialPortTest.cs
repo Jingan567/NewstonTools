@@ -1,5 +1,3 @@
-
-
 namespace NewstonToolsTest;
 
 [TestClass]
