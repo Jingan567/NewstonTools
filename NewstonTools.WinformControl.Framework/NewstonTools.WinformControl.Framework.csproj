@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="开发日志.md" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
