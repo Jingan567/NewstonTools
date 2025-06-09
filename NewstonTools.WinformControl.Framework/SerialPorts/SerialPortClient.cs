@@ -1,90 +1,15 @@
-﻿using System;
+﻿using NewstonTools.WinformControl.SerialPorts;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO.Ports;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NewstonTools.WinformControl.Framework.SerialPorts
 {
 
     class SerialPortClient
     {
-        #region 静态方法
-        /// <summary>
-        /// 设置串口号
-        /// </summary>
-        /// <param name="obj">需要绑定的项的集合（如：ComboBox中项的集合ComboBox.Items）</param>
-        public static void SetPortNameValues(IList obj)
-        {
-            obj.Clear();
-            try
-            {
-                foreach (string str in SerialPort.GetPortNames())
-                {
-                    obj.Add(str);
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("未能查询到串口名称——" + e.ToString());
-            }
-
-        }
-
-        /// <summary>
-        /// 设置波特率
-        /// </summary>
-        /// <param name="obj">需要绑定的项的集合（如：ComboBox中项的集合ComboBox.Items）</param>
-        public static void SetBauRateValues(IList obj)
-        {
-            obj.Clear();
-            foreach (BaudRates rate in Enum.GetValues(typeof(BaudRates)))
-            {
-                obj.Add(((int)rate).ToString());
-            }
-        }
-
-        /// <summary>
-        /// 设置数据位
-        /// </summary>
-        /// <param name="obj">需要绑定的项的集合（如：ComboBox中项的集合ComboBox.Items）</param>
-        public static void SetDataBitsValues(IList obj)
-        {
-            obj.Clear();
-            foreach (DataBits databit in Enum.GetValues(typeof(DataBits)))
-            {
-                obj.Add(((int)databit).ToString());
-            }
-        }
-
-        /// <summary>
-        /// 设置校验位列表
-        /// </summary>
-        /// <param name="obj">需要绑定的项的集合（如：ComboBox中项的集合ComboBox.Items）</param>
-        public static void SetParityValues(IList obj)
-        {
-            obj.Clear();
-            foreach (string str in Enum.GetNames(typeof(Parity)))
-            {
-                obj.Add(str);
-            }
-        }
-
-        /// <summary>
-        /// 设置停止位
-        /// </summary>
-        /// <param name="obj">需要绑定的项的集合（如：ComboBox中项的集合ComboBox.Items）</param>
-        public static void SetStopBitValues(IList obj)
-        {
-            obj.Clear();
-            foreach (string str in Enum.GetNames(typeof(StopBits)))
-            {
-                obj.Add(str);
-            }
-        }
-        #endregion
+        
 
         #region 变量属性
         public event Action<List<byte>> DataReceived;
@@ -306,44 +231,5 @@ namespace NewstonTools.WinformControl.Framework.SerialPorts
         #endregion
     }
 
-    #region 波特率、数据位的枚举
-    /// <summary>
-    /// 串口数据位列表（5,6,7,8）
-    /// </summary>
-    public enum DataBits : int
-    {
-        Five = 5,
-        Six = 6,
-        Sevent = 7,
-        Eight = 8
-    }
 
-    /// <summary>
-    /// 串口波特率列表。
-    /// 75,110,150,300,600,1200,2400,4800,9600,14400,19200,28800,38400,56000,57600,
-    /// 115200,128000,230400,256000
-    /// </summary>
-    public enum BaudRates : int
-    {
-        BR_75 = 75,
-        BR_110 = 110,
-        BR_150 = 150,
-        BR_300 = 300,
-        BR_600 = 600,
-        BR_1200 = 1200,
-        BR_2400 = 2400,
-        BR_4800 = 4800,
-        BR_9600 = 9600,
-        BR_14400 = 14400,
-        BR_19200 = 19200,
-        BR_28800 = 28800,
-        BR_38400 = 38400,
-        BR_56000 = 56000,
-        BR_57600 = 57600,
-        BR_115200 = 115200,
-        BR_128000 = 128000,
-        BR_230400 = 230400,
-        BR_256000 = 256000
-    }
-    #endregion
 }

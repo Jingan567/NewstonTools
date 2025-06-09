@@ -51,6 +51,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SerialPorts\BaudRates.cs" />
+    <Compile Include="SerialPorts\DataBits.cs" />
+    <Compile Include="SerialPorts\NewSerialPortStatic.cs" />
+    <Compile Include="Tests\LedControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tests\LedControl.Designer.cs">
+      <DependentUpon>LedControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="SerialPorts\NewSerialPort.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -62,6 +71,9 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Tests\LedControl.resx">
+      <DependentUpon>LedControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SerialPorts\NewSerialPort.resx">
       <DependentUpon>NewSerialPort.cs</DependentUpon>
     </EmbeddedResource>
