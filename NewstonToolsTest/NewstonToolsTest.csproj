@@ -9,8 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LiuLiuTools.WpfControl\NewstonTools.WpfControl.csproj" />
-    <ProjectReference Include="..\LiuLiuTools\NewstonTools.csproj" />
+    <ProjectReference Include="..\NewstonTools.WpfControl\NewstonTools.WpfControl.csproj" />
     <ProjectReference Include="..\NewstonTools\NewstonTools.csproj" />
   </ItemGroup>
 
