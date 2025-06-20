@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace NewstonTools.WinformControl.Tests
+namespace NewstonTools.WinformControl.Framework.Tests
 {
     public partial class LedControl : UserControl
     {

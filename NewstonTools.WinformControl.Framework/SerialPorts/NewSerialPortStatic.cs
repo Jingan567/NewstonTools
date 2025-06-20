@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewstonTools.WinformControl.SerialPorts
+namespace NewstonTools.WinformControl.Framework.SerialPorts
 {
     public class NewSerialPortStatic
     {

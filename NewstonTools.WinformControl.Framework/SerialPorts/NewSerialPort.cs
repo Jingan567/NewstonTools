@@ -1,4 +1,4 @@
-﻿using NewstonTools.WinformControl.SerialPorts;
+﻿using NewstonTools.WinformControl.Framework.SerialPorts;
 using Sunny.UI;
 using System;
 using System.Collections.Generic;

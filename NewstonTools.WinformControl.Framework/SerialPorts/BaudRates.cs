@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewstonTools.WinformControl.SerialPorts
+namespace NewstonTools.WinformControl.Framework.SerialPorts
 {
     /// <summary>
     /// 串口波特率列表。

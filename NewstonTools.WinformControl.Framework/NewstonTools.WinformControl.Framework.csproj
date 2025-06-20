@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{6BE1ACB3-018D-434C-B9D7-63E569EE4709}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>NewstonTools.WinformControl</RootNamespace>
-    <AssemblyName>NewstonTools.WinformControl</AssemblyName>
+    <RootNamespace>NewstonTools.WinformControl.Framework</RootNamespace>
+    <AssemblyName>NewstonTools.WinformControl.Framework</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

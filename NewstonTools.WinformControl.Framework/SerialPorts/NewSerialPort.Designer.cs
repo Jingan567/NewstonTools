@@ -30,6 +30,7 @@
         {
             this.uiTitlePanel1 = new Sunny.UI.UITitlePanel();
             this.uiTableLayoutPanel1 = new Sunny.UI.UITableLayoutPanel();
+            this.uiComboBox4 = new Sunny.UI.UIComboBox();
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.uiButton1 = new Sunny.UI.UIButton();
             this.uiButton2 = new Sunny.UI.UIButton();
@@ -40,7 +41,6 @@
             this.uiComboBox1 = new Sunny.UI.UIComboBox();
             this.uiComboBox2 = new Sunny.UI.UIComboBox();
             this.uiComboBox3 = new Sunny.UI.UIComboBox();
-            this.uiComboBox4 = new Sunny.UI.UIComboBox();
             this.uiComboBox5 = new Sunny.UI.UIComboBox();
             this.uiTitlePanel1.SuspendLayout();
             this.uiTableLayoutPanel1.SuspendLayout();
@@ -94,6 +94,29 @@
             this.uiTableLayoutPanel1.Size = new System.Drawing.Size(508, 304);
             this.uiTableLayoutPanel1.TabIndex = 8;
             this.uiTableLayoutPanel1.TagString = null;
+            // 
+            // uiComboBox4
+            // 
+            this.uiComboBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiComboBox4.DataSource = null;
+            this.uiComboBox4.FillColor = System.Drawing.Color.White;
+            this.uiComboBox4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiComboBox4.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.uiComboBox4.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.uiComboBox4.Location = new System.Drawing.Point(150, 156);
+            this.uiComboBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiComboBox4.MinimumSize = new System.Drawing.Size(63, 0);
+            this.uiComboBox4.Name = "uiComboBox4";
+            this.uiComboBox4.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
+            this.uiComboBox4.Radius = 1;
+            this.uiComboBox4.Size = new System.Drawing.Size(353, 39);
+            this.uiComboBox4.SymbolSize = 24;
+            this.uiComboBox4.TabIndex = 11;
+            this.uiComboBox4.Text = "uiComboBox4";
+            this.uiComboBox4.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiComboBox4.Watermark = "";
             // 
             // uiLabel1
             // 
@@ -255,29 +278,6 @@
             this.uiComboBox3.Text = "uiComboBox3";
             this.uiComboBox3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiComboBox3.Watermark = "";
-            // 
-            // uiComboBox4
-            // 
-            this.uiComboBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiComboBox4.DataSource = null;
-            this.uiComboBox4.FillColor = System.Drawing.Color.White;
-            this.uiComboBox4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiComboBox4.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.uiComboBox4.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.uiComboBox4.Location = new System.Drawing.Point(150, 156);
-            this.uiComboBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiComboBox4.MinimumSize = new System.Drawing.Size(63, 0);
-            this.uiComboBox4.Name = "uiComboBox4";
-            this.uiComboBox4.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
-            this.uiComboBox4.Radius = 1;
-            this.uiComboBox4.Size = new System.Drawing.Size(353, 39);
-            this.uiComboBox4.SymbolSize = 24;
-            this.uiComboBox4.TabIndex = 11;
-            this.uiComboBox4.Text = "uiComboBox4";
-            this.uiComboBox4.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiComboBox4.Watermark = "";
             // 
             // uiComboBox5
             // 

@@ -1,4 +1,4 @@
-﻿namespace NewstonTools.WinformControl.Tests
+﻿namespace NewstonTools.WinformControl.Framework.Tests
 {
     partial class LedControl
     {
