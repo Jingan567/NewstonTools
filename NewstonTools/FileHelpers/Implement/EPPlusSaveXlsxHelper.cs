@@ -156,5 +156,14 @@ namespace NewstonTools.FileHelpers.Implement
                 }
             }
         }
+
+
+        public bool ReadXlsx(string filePath,out DataSet)
+        {
+            using (ExcelPackage package = new ExcelPackage())
+            {
+                //package.Workbook.Part.GetRelationships();//这里的Part出现在程序集的内部
+            }
+        }  
     }
 }
