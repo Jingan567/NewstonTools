@@ -10,8 +10,10 @@ public class EPPlusSaveXlsxHelperTest
     [TestMethod]
     public void TestWriteXlsx()
     {
-        DataSet set = CreateSampleDataSet();
-        helper.WriteXlsx(set);
+        //DataSet set = CreateSampleDataSet();
+        //helper.WriteXlsx(set);
+        DataSet set1;
+        helper.ReadXlsx("C:\\Temp\\Sample.xlsx", out set1);
     }
 
     public DataSet CreateSampleDataSet()
@@ -42,7 +44,7 @@ public class EPPlusSaveXlsxHelperTest
 
         // 添加数据到 Orders 表
         ordersTable.Rows.Add(10643, "ALFKI", new DateTime(2023, 1, 1), 32.38m);
-        ordersTable.Rows.Add(10692, "ALFKI", new DateTime(2023, 1, 16), 11.61m);
+        ordersTable.Rows.Add(10649, "ALFKI", new DateTime(2023, 1, 16), 11.61m);
         ordersTable.Rows.Add(10308, "ANATR", new DateTime(2023, 3, 16), 87.8m);
 
         // 添加表到 DataSet

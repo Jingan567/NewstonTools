@@ -34,7 +34,7 @@ namespace NewstonTools.FileHelpers.Implement
             FileInfo fileInfo = new FileInfo(file);
             FilePath = fileInfo.DirectoryName;
             FileName = fileInfo.Name;
-
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
 
         }
@@ -42,6 +42,7 @@ namespace NewstonTools.FileHelpers.Implement
         {
             FilePath = fileInfo.DirectoryName;
             FileName = fileInfo.Name;
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
         }
 
 
@@ -141,7 +142,6 @@ namespace NewstonTools.FileHelpers.Implement
                             System.Console.WriteLine($"文件已保存至: {fileStr}");
                             return true;
                         }
-
                     }
                     else
                     {
@@ -158,12 +158,51 @@ namespace NewstonTools.FileHelpers.Implement
         }
 
 
-        public bool ReadXlsx(string filePath,out DataSet)
+        public void ReadXlsx(string filePath, out DataSet dataSet)
         {
+
             using (ExcelPackage package = new ExcelPackage())
             {
-                //package.Workbook.Part.GetRelationships();//这里的Part出现在程序集的内部
+                dataSet = new DataSet();
+                package.Load(new FileStream(filePath, FileMode.Open));
+                var sheets = package.Workbook.Worksheets;
+                foreach (var sheet in sheets)
+                {
+                    DataTable dt = ConvertToDataTable(sheet);
+                    if (dt != null)
+                    {
+                        dataSet.Tables.Add(dt);
+                    }
+                }
             }
-        }  
+        }
+
+
+        private DataTable ConvertToDataTable(ExcelWorksheet worksheet)
+        {
+            var dataTable = new DataTable();
+
+            if (worksheet.Dimension == null) return dataTable;
+
+            // 添加列  
+            for (int col = worksheet.Dimension.Start.Column; col <= worksheet.Dimension.End.Column; col++)
+            {
+                dataTable.Columns.Add(worksheet.Cells[1,col].Text);//初始化DataTable表头
+            }
+
+            // 添加行数据  
+            for (int row = worksheet.Dimension.Start.Row; row <= worksheet.Dimension.End.Row; row++)
+            {
+                if (row == 1) continue;//跳过第一行表头
+                var dataRow = dataTable.NewRow();
+                for (int col = worksheet.Dimension.Start.Column; col <= worksheet.Dimension.End.Column; col++)
+                {
+                    dataRow[col - 1] = worksheet.Cells[row, col].Value;
+                }
+                dataTable.Rows.Add(dataRow);
+            }
+
+            return dataTable;
+        }
     }
 }
