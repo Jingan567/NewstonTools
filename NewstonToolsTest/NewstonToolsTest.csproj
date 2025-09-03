@@ -13,4 +13,8 @@
     <ProjectReference Include="..\NewstonTools\NewstonTools.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="NewstonTools\HttpTool\" />
+  </ItemGroup>
+
 </Project>
