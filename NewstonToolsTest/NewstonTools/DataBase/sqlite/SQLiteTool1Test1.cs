@@ -76,14 +76,22 @@ public class SQLiteTool1Test1
                 ""Message10""	TEXT,
 	            PRIMARY KEY(""Id"" AUTOINCREMENT)
             );");
-        
+
         try
         {
             string InsertString = "INSERT INTO FirstMachine (Message1, Message2, Message3, Message4, Message5, Message6, Message7, Message8, Message9, Message10) VALUES (@message1, @message2, @message3, @message4, @message5, @message6, @message7, @message8, @message9, @message10)";
             SQLiteParameter[] parameter = new SQLiteParameter[10];
             for (int i = 0; i < 10; i++)
             {
-                parameter[i] = new SQLiteParameter($"@message{i + 1}", ChineseTextGenerator.Generate());
+                if (i < 3)
+                {
+                    parameter[i] = new SQLiteParameter($"@message{i + 1}", ChineseTextGenerator.Generate());
+                }
+                else
+                {
+                    parameter[i] = new SQLiteParameter($"@message{i + 1}", null);
+                }
+               
             }
             db.BeginTransaction();
             db.ExecuteNonQuery(InsertString, parameter);
