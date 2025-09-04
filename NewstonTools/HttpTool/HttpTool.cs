@@ -57,7 +57,7 @@ namespace NewstonTools.HttpTool
 
         public bool SendMessage(string message)
         {
-           
+           throw new NotImplementedException();
         }
     }
 }
