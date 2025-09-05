@@ -59,7 +59,7 @@ public class SQLiteTool1Test1
     [TestMethod]
     public void InsertTestMethod2()
     {
-        var db = new SQLiteTool1("Data Source=SQLiteTool1Test1.db;Version=3;");
+        var db = new SQLiteTool1("Data Source=D:\\Test\\Test.Dbfile\\SQLiteTool1Test1.db;Version=3;");
         //创建第一台
         db.ExecuteNonQuery(
             @"CREATE TABLE IF NOT EXISTS ""FirstMachine"" (
