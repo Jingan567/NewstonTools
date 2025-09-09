@@ -1,3 +1,4 @@
+using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
 using NewstonTools.DataBase.sqlite;
 using NewstonTools.FunnyTool;
 using System.Configuration;
@@ -91,7 +92,7 @@ public class SQLiteTool1Test1
                 {
                     parameter[i] = new SQLiteParameter($"@message{i + 1}", null);
                 }
-               
+
             }
             db.BeginTransaction();
             db.ExecuteNonQuery(InsertString, parameter);
@@ -139,5 +140,54 @@ public class SQLiteTool1Test1
             times++;
         }
         Debug.WriteLine($"总耗时：{sw_InsertAllTime.ElapsedMilliseconds}ms");
+    }
+
+    /// <summary>
+    /// 开启多个线程使用类库去进行插入操作。
+    /// </summary>
+    [TestMethod]
+    public void InsertTestMethod4()
+    {
+        try
+        {
+            var db = new SQLiteTool1("Data Source=D:\\Test\\Test.Dbfile\\SQLiteTool1Test1.db;Version=3;");
+            //创建第一台
+            db.ExecuteNonQuery(
+                @"CREATE TABLE IF NOT EXISTS ""MutiThread"" (
+	            ""Id""	INTEGER NOT NULL,
+	            ""Message1""	TEXT,
+	            PRIMARY KEY(""Id"" AUTOINCREMENT)
+            );");
+
+            Thread t1 = new Thread(t =>
+            {
+                string InsertStr = $"INSERT INTO MutiThread(Message1) VALUES(@message1)";
+                SQLiteParameter parameter = new SQLiteParameter("@message1", "这是t1写入的");
+                while (true)
+                {
+                    db.ExecuteNonQuery(InsertStr, parameter);
+                    Thread.Sleep(10);
+                }
+            });
+
+            Thread t2 = new Thread(t =>
+            {
+                string InsertStr = $"INSERT INTO MutiThread(Message1) VALUES(@message1)";
+                SQLiteParameter parameter = new SQLiteParameter("@message1", "这是t2写入的");
+                while (true)
+                {
+                    db.ExecuteNonQuery(InsertStr, parameter);
+                    Thread.Sleep(10);
+                }
+            });
+
+            t1.Start();
+            t2.Start();
+            t2.Join();
+        }
+        catch (Exception)
+        {
+            throw;
+        }
     }
 }
