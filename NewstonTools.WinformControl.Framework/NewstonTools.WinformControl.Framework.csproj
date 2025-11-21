@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ToolFunctions\AutoAdaptWindowsSize.cs" />
     <Compile Include="SerialPorts\BaudRates.cs" />
     <Compile Include="SerialPorts\DataBits.cs" />
     <Compile Include="SerialPorts\NewSerialPortStatic.cs" />
@@ -68,6 +69,10 @@
     </Compile>
     <Compile Include="SerialPorts\SerialPortClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ToolFunctions\AutoSizeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolFunctions\WindowStyles.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
@@ -84,6 +89,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataLists\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
