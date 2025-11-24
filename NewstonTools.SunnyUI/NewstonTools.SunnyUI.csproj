@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{6BE1ACB3-018D-434C-B9D7-63E569EE4709}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>NewstonTools.WinformControl.Framework</RootNamespace>
-    <AssemblyName>NewstonTools.WinformControl.Framework</AssemblyName>
+    <RootNamespace>NewstonTools.SunnyUI</RootNamespace>
+    <AssemblyName>NewstonTools.SunnyUI</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -51,14 +51,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataLists\ProductionTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DataLists\ProductionTable.Designer.cs">
+      <DependentUpon>ProductionTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToolFunctions\AutoAdaptWindowsSize.cs" />
     <Compile Include="SerialPorts\BaudRates.cs" />
     <Compile Include="SerialPorts\DataBits.cs" />
     <Compile Include="SerialPorts\NewSerialPortStatic.cs" />
-    <Compile Include="Tests\LedControl.cs">
+    <Compile Include="SunnyUI\LedControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tests\LedControl.Designer.cs">
+    <Compile Include="SunnyUI\LedControl.Designer.cs">
       <DependentUpon>LedControl.cs</DependentUpon>
     </Compile>
     <Compile Include="SerialPorts\NewSerialPort.cs">
@@ -72,11 +78,24 @@
     <Compile Include="ToolFunctions\AutoSizeForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ToolFunctions\FontManager.cs" />
+    <Compile Include="ToolFunctions\NoBorderDragForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolFunctions\SupportDesignModeUIUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolFunctions\SupportDesignModeUIUserControl.Designer.cs">
+      <DependentUpon>SupportDesignModeUIUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToolFunctions\WindowStyles.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Tests\LedControl.resx">
+    <EmbeddedResource Include="DataLists\ProductionTable.resx">
+      <DependentUpon>ProductionTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SunnyUI\LedControl.resx">
       <DependentUpon>LedControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SerialPorts\NewSerialPort.resx">
@@ -90,8 +109,6 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataLists\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,10 +1,11 @@
 ﻿using NewstonTools.WinformControl.Framework.ToolFunctions;
+using Sunny.UI;
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace NewstonTools.WinformControl.Framework.Tests
+namespace NewstonTools.SunnyUI
 {
     public partial class LedControl : UserControl
     {
@@ -59,11 +60,11 @@ namespace NewstonTools.WinformControl.Framework.Tests
                 ledStatus = value;
                 if (ledStatus == true)
                 {
-                    this.uiLight1. = Color.FromArgb(0, 192, 0);//绿色
+                    this.uiLight1. State= UILightState.On;
                 }
                 else
                 {
-                    this.uiLight1.ShowLightLine = false;
+                    this.uiLight1.State = UILightState.Off;
                 }
             }
         }

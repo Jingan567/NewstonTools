@@ -1,15 +1,17 @@
-﻿using NewstonTools.WinformControl.Framework.SerialPorts;
+﻿
+using NewstonTools.WinformControl.Framework.ToolFunctions;
 using Sunny.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.IO;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace NewstonTools.WinformControl.Framework.SerialPorts
+namespace NewstonTools.SunnyUI.SerialPorts
 {
     public partial class NewSerialPort : UIUserControl
     {
@@ -23,6 +25,24 @@ namespace NewstonTools.WinformControl.Framework.SerialPorts
             {
                 serialportClientConfigChangeFromUI();
             }
+            //InitFont();
+            //this.FontChanged += NewSerialPort_FontChanged;
+        }
+
+        private void NewSerialPort_FontChanged(object sender, EventArgs e)
+        {
+            Font font = FontManager.GetScaledFontSize(this);//获取缩放后的字体
+            FontManager.SetFontRecursively(this, font);//递归设置字体
+        }
+
+        private void InitFont()
+        {
+            // 1. 父控件（UserControl）设置字体,这个只要设置过字体就没办法了
+            this.Font = new Font("微软雅黑", 10F); // 父控件字体大小 10pt
+
+            // 2. 清除子控件的手动字体设置（关键：让子控件回归继承状态）
+            // 设计时拖入的子控件需手动清除 Font 属性（在属性窗口中选“(默认)”）
+            // 代码创建的子控件无需额外设置（默认 Font 为 null，自动继承）
         }
 
         [Browsable(true)]

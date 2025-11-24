@@ -7,6 +7,9 @@ using System.Windows.Forms;
 
 namespace NewstonTools.WinformControl.Framework.ToolFunctions
 {
+    /// <summary>
+    /// 控件自适应窗体大小（包括字体）
+    /// </summary>
     public class AutoSizeForm : Form
     {
         

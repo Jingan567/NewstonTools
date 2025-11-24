@@ -1,10 +1,10 @@
-﻿using NewstonTools.WinformControl.Framework.SerialPorts;
+﻿
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO.Ports;
 
-namespace NewstonTools.WinformControl.Framework.SerialPorts
+namespace NewstonTools.SunnyUI.SerialPorts
 {
 
     class SerialPortClient

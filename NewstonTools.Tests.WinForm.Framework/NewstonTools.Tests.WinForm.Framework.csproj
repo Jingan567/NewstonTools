@@ -59,10 +59,19 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -88,9 +97,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NewstonTools.WinformControl.Framework\NewstonTools.WinformControl.Framework.csproj">
-      <Project>{6be1acb3-018d-434c-b9d7-63e569ee4709}</Project>
-      <Name>NewstonTools.WinformControl.Framework</Name>
+    <ProjectReference Include="..\NewstonTools.SunnyUI\NewstonTools.SunnyUI.csproj">
+      <Project>{6BE1ACB3-018D-434C-B9D7-63E569EE4709}</Project>
+      <Name>NewstonTools.SunnyUI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

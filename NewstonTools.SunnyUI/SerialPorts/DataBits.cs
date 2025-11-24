@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewstonTools.WinformControl.Framework.SerialPorts
+namespace NewstonTools.SunnyUI.SerialPorts
 {
     /// <summary>
     /// 串口数据位列表（5,6,7,8）

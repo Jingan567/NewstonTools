@@ -1,4 +1,4 @@
-﻿namespace NewstonTools.WinformControl.Framework.Tests
+﻿namespace NewstonTools.SunnyUI
 {
     partial class LedControl
     {
